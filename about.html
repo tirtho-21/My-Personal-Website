@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me - My Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* About Page Specific Styles */
+        .about-section {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .about-image {
+            flex: 1;
+            min-width: 300px;
+            max-width: 500px;
+        }
+        
+        .about-image img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-content {
+            flex: 2;
+            min-width: 300px;
+        }
+        
+        .about-content h1 {
+            margin-bottom: 20px;
+            color: #3498db;
+        }
+        
+        .about-content p {
+            margin-bottom: 15px;
+            line-height: 1.8;
+        }
+        
+        .skills {
+            margin-top: 30px;
+        }
+        
+        .skill-item {
+            margin-bottom: 15px;
+        }
+        
+        .skill-name {
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        
+        .skill-bar {
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        
+        .skill-level {
+            height: 100%;
+            background-color: #3498db;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="Personal Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cv.html" class="btn-cv">Download CV</a></li>
+        </ul>
+    </nav>
+
+    <!-- About Me Section with Image and Text -->
+    <section class="about-section">
+        <div class="container">
+            <div class="about-section">
+                <div class="about-image">
+                    <img src="images/about-me.jpg" alt="Profile Picture">
+                </div>
+                <div class="about-content">
+                    <h1>About Me</h1>
+                    <p>Hello! I'm Tirtho Joty Roy, a passionate Software developer based in Khulna,Bangladesh. I have over 3 years of experience in this field and am dedicated to gain enough experience within my current role to be able to apply for senior engineer.</p>
+                    
+                    <p>I graduated from North Western University with a degree in Computer Science and Engineering. Throughout my career, I've focused on Programming, which has allowed me to develop a unique perspective on Careers and Jobs.</p>
+                    
+                    <p>When I'm not working, you can find me Explore new technologies. I believe that The ability to recover from failures and keep from becoming discouraged. Courage, love and commitment to their work.</p>
+                    
+                    <div class="skills">
+                        <h2>My Skills</h2>
+                        
+                        <div class="skill-item">
+                            <div class="skill-name">Programming Languages: C, C++, Python, JavaScript, Java</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 90%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-name">Web Development: HTML, CSS, BOOTSTRAP</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 85%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-name">Database Management: MySQL</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 80%;"></div>
+                            </div>
+                        </div>
+                        
+                        <div class="skill-item">
+                            <div class="skill-name">Soft Skills: Teamwork, Problem-Solving, Communication</div>
+                            <div class="skill-bar">
+                                <div class="skill-level" style="width: 75%;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Academic Qualifications Table -->
+    <section class="qualifications-section">
+        <div class="container">
+            <h2>Academic Qualifications</h2>
+            <table class="qualifications-table">
+                <thead>
+                    <tr>
+                        <th>Degree/Certificate</th>
+                        <th>Institution</th>
+                        <th>Year</th>
+                        <th>Grade/CGPA</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>BSc in Computer Science and Engineering</td>
+                        <td>North Western University</td>
+                        <td>On going</td>
+                        <td>X.XX/4.0</td>
+                    </tr>
+                    <tr>
+                        <td>HSC</td>
+                        <td>Batiaghata College</td>
+                        <td>2019 - 2021</td>
+                        <td>4.83</td>
+                    </tr>
+                    <tr>
+                        <td>SSC</td>
+                        <td>Batiaghata Thana H.Q. Pilot Model High School</td>
+                        <td>2018 - 2019</td>
+                        <td>4.56</td>
+                    </tr>
+                    <tr>
+                        <td>Python for Everybody</td>
+                        <td>Ostad</td>
+                        <td>2025</td>
+                        <td>Pass with Distinction</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 My Personal Website. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html> 

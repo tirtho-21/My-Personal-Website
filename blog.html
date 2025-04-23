@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - My Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Blog Page Specific Styles */
+        .blog-section {
+            background-color: var(--light-color);
+            padding: 100px 0;
+        }
+        
+        .blog-page-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .blog-page-header h1 {
+            color: var(--primary-color);
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .blog-page-header p {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-light);
+            font-size: 1.1rem;
+        }
+        
+        .blog-filters {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 40px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .blog-filter-btn {
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            padding: 8px 20px;
+            border-radius: 30px;
+            cursor: pointer;
+            transition: var(--transition);
+            font-size: 0.9rem;
+        }
+        
+        .blog-filter-btn.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .blog-filter-btn:hover:not(.active) {
+            background-color: #f0f0f0;
+        }
+        
+        .blog-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+        }
+        
+        .blog-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .blog-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .blog-card.featured {
+            grid-column: span 2;
+            display: flex;
+            flex-direction: row;
+        }
+        
+        .blog-image {
+            height: 220px;
+            overflow: hidden;
+        }
+        
+        .blog-card.featured .blog-image {
+            flex: 1;
+            height: auto;
+        }
+        
+        .blog-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .blog-card:hover .blog-image img {
+            transform: scale(1.1);
+        }
+        
+        .blog-content {
+            padding: 25px;
+        }
+        
+        .blog-card.featured .blog-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .blog-meta {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 0.85rem;
+            color: var(--text-light);
+        }
+        
+        .blog-category {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            margin-right: 15px;
+        }
+        
+        .blog-date {
+            display: flex;
+            align-items: center;
+        }
+        
+        .blog-date i {
+            margin-right: 5px;
+        }
+        
+        .blog-content h3 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+            transition: var(--transition);
+        }
+        
+        .blog-card:hover .blog-content h3 {
+            color: var(--primary-color);
+        }
+        
+        .blog-content p {
+            margin-bottom: 20px;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
+        
+        .blog-card.featured .blog-content p {
+            margin-bottom: 25px;
+        }
+        
+        .read-more {
+            display: inline-flex;
+            align-items: center;
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .read-more i {
+            margin-left: 5px;
+            transition: var(--transition);
+        }
+        
+        .read-more:hover {
+            color: var(--secondary-color);
+        }
+        
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+        
+        .pagination {
+            display: flex;
+            justify-content: center;
+            margin-top: 60px;
+            gap: 10px;
+        }
+        
+        .pagination-item {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 5px;
+            background-color: white;
+            border: 1px solid #e0e0e0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .pagination-item.active {
+            background-color: var(--primary-color);
+            color: white;
+            border-color: var(--primary-color);
+        }
+        
+        .pagination-item:hover:not(.active) {
+            background-color: #f0f0f0;
+        }
+        
+        @media (max-width: 768px) {
+            .blog-card.featured {
+                grid-column: span 1;
+                flex-direction: column;
+            }
+            
+            .blog-card.featured .blog-image {
+                height: 220px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="Personal Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cv.html" class="btn-cv">Download CV</a></li>
+        </ul>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Blog Header -->
+    <section class="blog-section">
+        <div class="container">
+            <div class="blog-page-header" data-aos="fade-up">
+                <h1>My Blog</h1>
+                <p>Insights, thoughts, and experiences from my professional journey. Explore articles on technology, industry trends, and best practices.</p>
+            </div>
+            
+            <!-- Blog Filters -->
+            <div class="blog-filters" data-aos="fade-up">
+                <button class="blog-filter-btn active">All</button>
+                <button class="blog-filter-btn">Technology</button>
+                <button class="blog-filter-btn">Design</button>
+                <button class="blog-filter-btn">Business</button>
+                <button class="blog-filter-btn">Personal</button>
+            </div>
+            
+            <!-- Blog Articles -->
+            <div class="blog-container">
+                <!-- Featured Article -->
+                <article class="blog-card featured" data-aos="fade-up">
+                    <div class="blog-image">
+                        <img src="images/blog-featured.jpg" alt="Featured Blog Post">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Technology</span>
+                            <span class="blog-date"><i class="far fa-calendar-alt"></i> May 12, 2023</span>
+                        </div>
+                        <h3>The Future of AI in Everyday Applications</h3>
+                        <p>Artificial Intelligence is rapidly transforming how we interact with technology in our daily lives. From smart assistants to personalized recommendations, AI is becoming an invisible force that shapes our digital experiences.</p>
+                        <p>This article explores emerging trends and practical applications that will define the next generation of AI-powered solutions.</p>
+                        <a href="#" class="read-more">Read Full Article <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <!-- Regular Articles -->
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image">
+                        <img src="images/blog-1.jpg" alt="Blog Post 1">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Technology</span>
+                            <span class="blog-date"><i class="far fa-calendar-alt"></i> April 15, 2023</span>
+                        </div>
+                        <h3>The Future of Technology</h3>
+                        <p>Exploring emerging trends and innovations that will shape our digital landscape in the coming years, from quantum computing to extended reality.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image">
+                        <img src="images/blog-2.jpg" alt="Blog Post 2">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Business</span>
+                            <span class="blog-date"><i class="far fa-calendar-alt"></i> March 24, 2023</span>
+                        </div>
+                        <h3>Best Practices for Success</h3>
+                        <p>Key strategies and approaches that have helped me achieve consistent results in my career and personal projects across different industries.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-image">
+                        <img src="images/blog-3.jpg" alt="Blog Post 3">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Design</span>
+                            <span class="blog-date"><i class="far fa-calendar-alt"></i> February 10, 2023</span>
+                        </div>
+                        <h3>Creative Problem Solving</h3>
+                        <p>How thinking outside the box can lead to innovative solutions and breakthroughs when faced with complex challenges in design and development.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image">
+                        <img src="images/blog-4.jpg" alt="Blog Post 4">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Personal</span>
+                            <span class="blog-date"><i class="far fa-calendar-alt"></i> January 28, 2023</span>
+                        </div>
+                        <h3>Finding Work-Life Balance</h3>
+                        <p>Strategies for maintaining productivity while ensuring personal wellbeing in our increasingly connected world of remote and hybrid work environments.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+                
+                <article class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image">
+                        <img src="images/blog-5.jpg" alt="Blog Post 5">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-meta">
+                            <span class="blog-category">Technology</span>
+                            <span class="blog-date"><i class="far fa-calendar-alt"></i> December 15, 2022</span>
+                        </div>
+                        <h3>Optimizing Website Performance</h3>
+                        <p>Technical tips and best practices to improve your website's speed, user experience, and search engine rankings through proven optimization techniques.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </article>
+            </div>
+            
+            <!-- Pagination -->
+            <div class="pagination" data-aos="fade-up">
+                <div class="pagination-item active">1</div>
+                <div class="pagination-item">2</div>
+                <div class="pagination-item">3</div>
+                <div class="pagination-item"><i class="fas fa-ellipsis-h"></i></div>
+                <div class="pagination-item">10</div>
+                <div class="pagination-item"><i class="fas fa-chevron-right"></i></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <img src="images/logo.png" alt="Personal Logo" class="footer-logo">
+                    <p>Delivering excellence and innovation in every project, with a commitment to quality and client satisfaction.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="achievements.html">Achievements</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> your.email@example.com</p>
+                    <p><i class="fas fa-phone"></i> +1 (234) 567-890</p>
+                    <p><i class="fas fa-map-marker-alt"></i> City, Country</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Subscribe</h3>
+                    <p>Stay updated with my latest articles and news</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 My Personal Website. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="scripts.js"></script>
+    <script>
+        // Blog specific JavaScript
+        document.addEventListener('DOMContentLoaded', function() {
+            // Blog filters
+            const filterBtns = document.querySelectorAll('.blog-filter-btn');
+            
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    // In a real application, you would filter the blog posts here
+                    // based on the selected category
+                });
+            });
+            
+            // Pagination
+            const paginationItems = document.querySelectorAll('.pagination-item');
+            
+            paginationItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    if (!this.classList.contains('active') && this.textContent !== '...' && !this.querySelector('i')) {
+                        // Remove active class from all pagination items
+                        paginationItems.forEach(i => i.classList.remove('active'));
+                        
+                        // Add active class to clicked item
+                        this.classList.add('active');
+                        
+                        // In a real application, you would load the corresponding blog posts here
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html> 

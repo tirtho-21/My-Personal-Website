@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Achievements - My Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Achievements Page Specific Styles */
+        .achievement-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: transform 0.3s;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .achievement-card h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        
+        .achievement-card p {
+            margin-bottom: 15px;
+        }
+        
+        .achievement-card .date {
+            color: #777;
+            font-style: italic;
+        }
+        
+        .achievement-badge {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: #3498db;
+            color: white;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 10px;
+            margin-bottom: 10px;
+        }
+        
+        .achievements-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        
+        .result-highlight {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 20px;
+            margin: 30px 0;
+        }
+        
+        .result-highlight h3 {
+            color: #3498db;
+            margin-bottom: 10px;
+        }
+        
+        .result-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #3498db;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="Personal Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cv.html" class="btn-cv">Download CV</a></li>
+        </ul>
+    </nav>
+
+    <!-- Achievements Header -->
+    <section class="achievements-section">
+        <div class="container">
+            <div class="achievements-header">
+                <h1>My Achievements</h1>
+                <p>A collection of my professional and personal accomplishments</p>
+            </div>
+            
+            <!-- Marvelous Result Highlight -->
+            <div class="result-highlight">
+                <h3>Academic Excellence</h3>
+                <p>I achieved the highest grade in my graduating class with a CGPA of:</p>
+                <div class="result-number">On going/4.0</div>
+                <p>This placed me in the top 2% of all graduates in my program's history.</p>
+            </div>
+            
+            <!-- Achievement Cards -->
+            <div class="achievement-card">
+                <span class="achievement-badge">Award</span>
+                <span class="achievement-badge">Recognition</span>
+                <h3>Outstanding Student of the Year</h3>
+                <p>Awarded for exceptional academic performance and contributions to university research projects.</p>
+                <p class="date">November 2026</p>
+            </div>
+            
+            <div class="achievement-card">
+                <span class="achievement-badge">Publication</span>
+                <span class="achievement-badge">Research</span>
+                <h3>Published Research Paper</h3>
+                <p>My research on [On going] was published in the [On going], a prestigious peer-reviewed journal.</p>
+                <p class="date">May 2026</p>
+            </div>
+            
+            <div class="achievement-card">
+                <span class="achievement-badge">Competition</span>
+                <h3>First Place in National Competition</h3>
+                <p>Won first place in the [On going], competing against over 200 participants from across the country.</p>
+                <p class="date">September 2026</p>
+            </div>
+            
+            <div class="achievement-card">
+                <span class="achievement-badge">Leadership</span>
+                <h3>President of Student Organization</h3>
+                <p>Led a team of 15 students to organize events and workshops that benefited over 500 students.</p>
+                <p class="date">2020-2021 Academic Year</p>
+            </div>
+            
+            <div class="achievement-card">
+                <span class="achievement-badge">Certification</span>
+                <h3>Professional Certification</h3>
+                <p>Earned Project management certifications after completing a rigorous training program and passing the certification exam with a score of 95%.</p>
+                <p class="date">December 2024</p>
+            </div>
+            
+            <!-- Another Result Highlight -->
+            <div class="result-highlight">
+                <h3>Project Success Rate</h3>
+                <p>Completed all assigned projects with a success rate of:</p>
+                <div class="result-number">98%</div>
+                <p>This resulted in [specific positive outcome or recognition].</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 My Personal Website. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html> 

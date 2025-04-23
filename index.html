@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Carousel CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="Personal Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cv.html" class="btn-cv">Download CV</a></li>
+        </ul>
+        <div class="mobile-menu-btn">
+            <i class="fas fa-bars"></i>
+        </div>
+    </nav>
+
+    <!-- Welcome Section with Background -->
+    <header class="welcome-section">
+        <div class="welcome-content" data-aos="fade-up" data-aos-duration="1000">
+            <h1>Welcome to My Site</h1>
+            <p>Learn about my journey, achievements, and skills</p>
+            <div class="cta-buttons">
+                <a href="#about-section" class="cta-btn primary">Learn More</a>
+                <a href="contact.html" class="cta-btn secondary">Get in Touch</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Quick About Section -->
+    <section id="about-section" class="quick-about">
+        <div class="container">
+            <div class="about-flex">
+                <div class="about-text" data-aos="fade-right">
+                    <h2>Who I Am</h2>
+                    <p class="lead">I'm a passionate professional dedicated to excellence in everything I do.</p>
+                    <p>With expertise in Software development, I bring creativity, technical knowledge, and dedication to every project. My approach combines innovative thinking with practical solutions.</p>
+                    <a href="about.html" class="read-more">Read More About Me <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="about-stats" data-aos="fade-left">
+                    <div class="stat-item">
+                        <span class="stat-number">5+</span>
+                        <span class="stat-label">Years Experience</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">50+</span>
+                        <span class="stat-label">Projects Completed</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">15+</span>
+                        <span class="stat-label">Happy Clients</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">3</span>
+                        <span class="stat-label">Awards Won</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Showcase -->
+    <section class="skills-showcase">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">My Expertise</h2>
+            <div class="skills-container">
+                <div class="skill-box" data-aos="flip-left" data-aos-delay="100">
+                    <div class="skill-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Web Development</h3>
+                    <p>Creating responsive and functional websites using the latest technologies</p>
+                </div>
+                <div class="skill-box" data-aos="flip-left" data-aos-delay="200">
+                    <div class="skill-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>UI/UX Design</h3>
+                    <p>Designing intuitive and beautiful user interfaces for optimal experience</p>
+                </div>
+                <div class="skill-box" data-aos="flip-left" data-aos-delay="300">
+                    <div class="skill-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Digital Marketing</h3>
+                    <p>Implementing strategies to increase visibility and audience engagement</p>
+                </div>
+                <div class="skill-box" data-aos="flip-left" data-aos-delay="400">
+                    <div class="skill-icon">
+                        <i class="fas fa-tasks"></i>
+                    </div>
+                    <h3>Project Management</h3>
+                    <p>Efficient planning and execution of projects to meet objectives</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Image Section -->
+    <section class="image-section">
+        <div class="container">
+            <img src="images/featured-image.jpg" alt="Featured Image" data-aos="zoom-in">
+        </div>
+    </section>
+
+    <!-- Divider -->
+    <div class="divider"></div>
+
+    <!-- Spacer -->
+    <div class="spacer"></div>
+
+    <!-- Image Carousel -->
+    <section class="carousel-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">My Portfolio</h2>
+            <div class="swiper-container" data-aos="fade-up">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide"><img src="images/carousel-1.png" alt="Carousel Image 1"></div>
+                    <div class="swiper-slide"><img src="images/carousel-2.png" alt="Carousel Image 2"></div>
+                    <div class="swiper-slide"><img src="images/carousel-3.png" alt="Carousel Image 3"></div>
+                    <div class="swiper-slide"><img src="images/carousel-4.png" alt="Carousel Image 4"></div>
+                </div>
+                <!-- Navigation buttons -->
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+                <!-- Pagination -->
+                <div class="swiper-pagination"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonials-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Client Testimonials</h2>
+            <div class="testimonials-container" data-aos="fade-up">
+                <div class="swiper-container-testimonials">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">Working with Tirtho Joty Roy was a game-changer for our project. Their expertise and dedication truly made a difference in achieving our goals.</p>
+                                <div class="testimonial-author">
+                                    <img src="images/testimonial-1.jpeg" alt="Client Name">
+                                    <div class="author-info">
+                                        <h4>John Smith</h4>
+                                        <p>CEO, Example Company</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">I was impressed by the attention to detail and creative solutions. Tirtho Joty Roy consistently delivered beyond our expectations.</p>
+                                <div class="testimonial-author">
+                                    <img src="images/testimonial-2.jpeg" alt="Client Name">
+                                    <div class="author-info">
+                                        <h4>Sarah Johnson</h4>
+                                        <p>Marketing Director, Brand Inc.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="testimonial-card">
+                                <div class="testimonial-quote"><i class="fas fa-quote-left"></i></div>
+                                <p class="testimonial-text">Exceptional problem-solving skills and a true professional approach. Tirtho Joty Roy is someone I would recommend to anyone looking for quality work.</p>
+                                <div class="testimonial-author">
+                                    <img src="images/testimonial-3.jpeg" alt="Client Name">
+                                    <div class="author-info">
+                                        <h4>Michael Brown</h4>
+                                        <p>Project Manager, Tech Solutions</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Pagination -->
+                    <div class="swiper-pagination-testimonials"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- YouTube Video Section -->
+    <section class="video-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Watch My Video</h2>
+            <div class="video-container" data-aos="zoom-in">
+                <iframe width="660" height="315" src="https://www.youtube.com/watch?v=5fgSI7kh8jQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Latest Blog Posts Section -->
+    <section class="blog-section">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Latest Articles</h2>
+            <div class="blog-container">
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="blog-image">
+                        <img src="images/blog-1.jpg" alt="Blog Post 1">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">April 15, 2023</div>
+                        <h3>The Future of Technology</h3>
+                        <p>Exploring emerging trends and innovations that will shape our digital landscape.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="blog-image">
+                        <img src="images/blog-2.jpeg" alt="Blog Post 2">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">March 24, 2023</div>
+                        <h3>Best Practices for Success</h3>
+                        <p>Key strategies and approaches that have helped me achieve consistent results.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="blog-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="blog-image">
+                        <img src="images/blog-3.png" alt="Blog Post 3">
+                    </div>
+                    <div class="blog-content">
+                        <div class="blog-date">February 10, 2023</div>
+                        <h3>Creative Problem Solving</h3>
+                        <p>How thinking outside the box can lead to innovative solutions and breakthroughs.</p>
+                        <a href="#" class="read-more">Read More <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Links -->
+    <section class="social-links">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">Connect With Me</h2>
+            <div class="social-icons" data-aos="fade-up">
+                <a href="https://www.facebook.com/share/1BkdfKnzNX/" class="social-icon" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://x.com/tirtho_joty_roy?t=arhxKFsEVfeX7W_m63ITqA&s=09" class="social-icon" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="https://instagram.com/tirtho_joty_roy" class="social-icon" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="https://www.linkedin.com/in/tirtho-joty-roy-581646263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" class="social-icon" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/tirtho-21" class="social-icon" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content" data-aos="zoom-in">
+                <h2>Ready to Work Together?</h2>
+                <p>Let's discuss your project and create something amazing</p>
+                <a href="contact.html" class="cta-btn-large">Get in Touch</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-about">
+                    <img src="images/logo.png" alt="Personal Logo" class="footer-logo">
+                    <p>Delivering excellence and innovation in every project, with a commitment to quality and client satisfaction.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="achievements.html">Achievements</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-contact">
+                    <h3>Contact Info</h3>
+                    <p><i class="fas fa-envelope"></i> tirthojotyror31@gmail.com</p>
+                    <p><i class="fas fa-phone"></i> +88 01997355825</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Khulna, Bangladesh</p>
+                </div>
+                <div class="footer-newsletter">
+                    <h3>Subscribe</h3>
+                    <p>Stay updated with my latest projects and news</p>
+                    <form class="newsletter-form">
+                        <input type="email" placeholder="Your Email" required>
+                        <button type="submit"><i class="fas fa-paper-plane"></i></button>
+                    </form>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2023 My Personal Website. All rights reserved.</p>
+                <div class="footer-social">
+                    <a href="https://www.facebook.com/share/1BkdfKnzNX/" target="_blank" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://x.com/tirtho_joty_roy?t=arhxKFsEVfeX7W_m63ITqA&s=09" target="_blank" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/tirtho_joty_roy" target="_blank" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/tirtho-joty-roy-581646263?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/tirtho-21" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript Files -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="scripts.js"></script>
+</body>
+</html> 

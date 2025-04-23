@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Download CV - My Personal Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CV Page Specific Styles */
+        .cv-section {
+            text-align: center;
+            padding: 80px 0;
+        }
+        
+        .cv-container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .cv-header {
+            margin-bottom: 50px;
+        }
+        
+        .cv-header h1 {
+            color: #3498db;
+            margin-bottom: 20px;
+        }
+        
+        .cv-preview {
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 40px;
+        }
+        
+        .cv-preview img {
+            max-width: 100%;
+            height: auto;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background-color: #3498db;
+            color: white;
+            text-decoration: none;
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            transition: all 0.3s;
+            margin-bottom: 30px;
+        }
+        
+        .download-btn:hover {
+            background-color: #2980b9;
+            transform: translateY(-3px);
+        }
+        
+        .download-btn i {
+            margin-right: 10px;
+        }
+        
+        .cv-note {
+            margin-top: 30px;
+            color: #777;
+            font-style: italic;
+        }
+        
+        .create-cv-section {
+            margin-top: 50px;
+            padding: 30px;
+            background-color: #f9f9f9;
+            border-radius: 8px;
+        }
+        
+        .create-cv-section h3 {
+            color: #3498db;
+            margin-bottom: 15px;
+        }
+        
+        .create-cv-steps {
+            list-style-type: none;
+            text-align: left;
+            margin-top: 20px;
+        }
+        
+        .create-cv-steps li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            background-color: #3498db;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <img src="images/logo.png" alt="Personal Logo">
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Me</a></li>
+            <li><a href="achievements.html">Achievements</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="cv.html" class="btn-cv">Download CV</a></li>
+        </ul>
+    </nav>
+
+    <!-- CV Section -->
+    <section class="cv-section">
+        <div class="cv-container">
+            <div class="cv-header">
+                <h1>My Curriculum Vitae</h1>
+                <p>Download my CV to learn more about my education, skills, and professional experience</p>
+            </div>
+            
+            <div class="cv-preview">
+                <img src="images/cv-preview.jpg" alt="CV Preview">
+            </div>
+            
+            <a href="https://drive.google.com/drive/folders/1Rb7pvcNhef4GgBIMoiGjOFQuaToVOO5H" class="download-btn" target="_blank">
+                <i class="fas fa-file-download"></i> Download CV (PDF)
+            </a>
+            
+            <p class="cv-note">Note: You'll need a PDF reader to view the CV after downloading. If you don't have one, you can use <a href="https://get.adobe.com/reader/" target="_blank">Adobe Reader</a> (free).</p>
+            
+            <!-- Creating a CV in Canva Section -->
+            <div class="create-cv-section">
+                <h3>How to Create Your Own Professional CV in Canva</h3>
+                <p>Creating a professional CV is easy with Canva. Here's how:</p>
+                
+                <ul class="create-cv-steps">
+                    <li>
+                        <div class="step-number">1</div>
+                        <div>Sign up for a free account at <a href="https://www.canva.com" target="_blank">Canva.com</a></div>
+                    </li>
+                    <li>
+                        <div class="step-number">2</div>
+                        <div>Search for "CV" or "Resume" in the templates section</div>
+                    </li>
+                    <li>
+                        <div class="step-number">3</div>
+                        <div>Choose a template that matches your style</div>
+                    </li>
+                    <li>
+                        <div class="step-number">4</div>
+                        <div>Customize it with your personal information, education, and work experience</div>
+                    </li>
+                    <li>
+                        <div class="step-number">5</div>
+                        <div>Download your CV as a PDF file</div>
+                    </li>
+                    <li>
+                        <div class="step-number">6</div>
+                        <div>Upload to Google Drive to get a shareable link for your website</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2023 My Personal Website. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="scripts.js"></script>
+</body>
+</html> 
